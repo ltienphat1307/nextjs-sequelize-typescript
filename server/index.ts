@@ -1,22 +1,38 @@
-import { createServer } from 'http'
-import { parse } from 'url'
-import next from 'next'
+import { createServer } from "http";
+import { parse } from "url";
+import next from "next";
 
-const port = parseInt(process.env.PORT || '3000', 10)
-const dev = process.env.NODE_ENV !== 'production'
-const app = next({ dev })
-const handle = app.getRequestHandler()
+import sequelize from "./models";
 
-app.prepare().then(() => {
-  createServer((req, res) => {
-    const parsedUrl = parse(req.url!, true)
-    handle(req, res, parsedUrl)
-  }).listen(port)
+const port = parseInt(process.env.PORT || "3000", 10);
+const dev = process.env.NODE_ENV !== "production";
 
-  // tslint:disable-next-line:no-console
-  console.log(
-    `> Server listening at http://localhost:${port} as ${
-      dev ? 'development' : process.env.NODE_ENV
-    }`
-  )
-})
+async function bootstap() {
+  try {
+    await sequelize.authenticate();
+    await sequelize.sync();
+
+    console.log("Connection has been established successfully.");
+  } catch (err) {
+    console.error("Unable to connect to the database:", err);
+  }
+
+  const app = next({ dev });
+  const handle = app.getRequestHandler();
+
+  app.prepare().then(() => {
+    createServer((req, res) => {
+      const parsedUrl = parse(req.url!, true);
+      handle(req, res, parsedUrl);
+    }).listen(port);
+
+    // tslint:disable-next-line:no-console
+    console.log(
+      `> Server listening at http://localhost:${port} as ${
+        dev ? "development" : process.env.NODE_ENV
+      }`
+    );
+  });
+}
+
+bootstap();
