@@ -2,7 +2,7 @@ import { createServer } from "http";
 import { parse } from "url";
 import next from "next";
 
-import sequelize from "./models";
+import sequelize from "./server/models";
 
 const port = parseInt(process.env.PORT || "3000", 10);
 const dev = process.env.NODE_ENV !== "production";
@@ -10,7 +10,7 @@ const dev = process.env.NODE_ENV !== "production";
 async function bootstap() {
   try {
     await sequelize.authenticate();
-    await sequelize.sync();
+    await sequelize.sync({ alter: true });
 
     console.log("Connection has been established successfully.");
   } catch (err) {

@@ -1,28 +1,26 @@
 import {
   Table,
   Column,
-  Model,
   DataType,
-  Sequelize,
+  AllowNull,
+  IsEmail,
 } from "sequelize-typescript";
+
+import { BaseModel } from "./BaseModel";
 
 @Table({
   timestamps: false,
   tableName: "user",
 })
-export class User extends Model {
+export class User extends BaseModel {
   @Column({ type: DataType.STRING })
   public name!: string;
 
-  @Column({
-    type: DataType.DATE,
-    defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
-  })
-  public createdAt!: Date;
+  @IsEmail
+  @Column({ type: DataType.STRING })
+  public email!: string;
 
-  @Column({
-    type: DataType.DATE,
-    defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
-  })
-  public updatedAt!: Date;
+  @AllowNull
+  @Column({ type: DataType.STRING })
+  public password?: string;
 }
