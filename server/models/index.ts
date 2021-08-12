@@ -1,10 +1,10 @@
 import { Sequelize } from "sequelize-typescript";
 
-import { User } from "./User";
-import { Post } from "./Post";
-import { Tag } from "./Tag";
-import { PostTagAssociation } from "./PostTagAssociation";
-import { Category } from "./Category";
+import { User } from "./definitions/User";
+import { Post } from "./definitions/Post";
+import { Tag } from "./definitions/Tag";
+import { PostTagAssociation } from "./definitions/PostTagAssociation";
+import { Category } from "./definitions/Category";
 import config from "../config";
 
 const sequelize = new Sequelize({

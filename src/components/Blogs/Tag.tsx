@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TagEntity } from "src/types/entities";
+import { Tag as TagEntity } from "@server/models";
 
 interface TagProps {
   tag: TagEntity;

@@ -1,5 +1,5 @@
 import React from "react";
-import { PostEntiy } from "@src/types/entities";
+import { Post as PostEntiy } from "@server/models";
 
 export const Post = (post: PostEntiy) => {
   return (
