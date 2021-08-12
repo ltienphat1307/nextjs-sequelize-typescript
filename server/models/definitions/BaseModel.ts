@@ -1,6 +1,6 @@
 import { Column, Model, DataType, Sequelize } from "sequelize-typescript";
 
-export class BaseModel extends Model {
+export class BaseModel extends Model<BaseModel> {
   @Column({
     type: DataType.DATE,
     defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),

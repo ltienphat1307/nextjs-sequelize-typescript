@@ -1,23 +1,25 @@
 import React from "react";
+import { NextPageContext } from "next";
 
 import { CategoryHeader, PostCard } from "@src/components/Blogs";
+import { UserRepository } from "@server/repositories";
 import { User } from "@server/models";
 
-export async function getServerSideProps() {
-  const users = await User.findAll({ raw: true });
+export async function getServerSideProps({ locale }: NextPageContext) {
+  console.log("locale", locale);
 
-  const _users = users.map((d) => ({
-    ...d,
-    createdAt: d.createdAt.toString(),
-    updatedAt: d.updatedAt.toString(),
-  }));
+  const users = await UserRepository.findAllRaw();
 
   // Pass data to the page via props
-  return { props: { users: _users } };
+  return { props: { users } };
 }
 
-export default function Home(props: any) {
-  console.log(props);
+interface HomeProps {
+  user: User[];
+}
+
+export default function Home(_props: HomeProps) {
+  console.log(_props);
   const cate = {
     name: "Test",
     desc: "my categories",

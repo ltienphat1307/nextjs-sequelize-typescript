@@ -18,5 +18,4 @@ const sequelize = new Sequelize({
 sequelize.addModels([User, Category, Post, Tag, PostTagAssociation]);
 
 export default sequelize;
-
 export { User, Post, Tag, PostTagAssociation, Category };
