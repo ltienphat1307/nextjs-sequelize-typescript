@@ -1,0 +1,15 @@
+.sidebar {
+  width: 200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  background-color: transparent;
+  background: transparent;
+  color: rgba(244, 244, 245, 0.9);
+  margin-left: 15px;
+  transition: height 1s;
+  -webkit-transform: translateX(-200px);
+  transform: translateX(-200px);
+}

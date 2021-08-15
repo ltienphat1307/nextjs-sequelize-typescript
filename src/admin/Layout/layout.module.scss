@@ -1,0 +1,29 @@
+.layoutRoot {
+  height: 100%;
+  position: relative;
+  left: 0;
+  transition: left 0.3s ease-in-out;
+}
+
+.layoutWrap {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  margin-left: 200px;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  transition: left 0.3s ease-in-out;
+}
+
+.layoutContent {
+  position: relative;
+  flex-grow: 1;
+  padding: 25px 40px 60px;
+}
+
+.laytFooter {
+  position: absolute;
+  bottom: 15px;
+  color: #c1ccd3;
+}

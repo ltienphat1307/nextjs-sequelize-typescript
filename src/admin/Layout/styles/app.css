@@ -1,0 +1,24 @@
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  color: rgba(244, 244, 245, 0.9);
+  background: radial-gradient(
+    farthest-side ellipse at 10% 0,
+    #333867 20%,
+    #17193b
+  );
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { NextPageContext } from "next";
 
-import { CategoryHeader, PostCard } from "@src/components/Blogs";
+import { CategoryHeader, PostCard } from "@src/client/components/Blogs";
 import { UserRepository } from "@server/repositories";
 import { User } from "@server/models";
 

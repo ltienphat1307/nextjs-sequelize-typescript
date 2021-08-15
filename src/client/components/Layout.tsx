@@ -4,7 +4,7 @@ import Link from "next/link";
 import Head from "next/head";
 
 import Navigation from "./Navigation";
-import config from "../config/siteConfig";
+import config from "../../config/siteConfig";
 
 const coverImage = "/images/blog-cover.jpeg";
 const logoImage = "/images/logo.png";
