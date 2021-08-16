@@ -4,12 +4,12 @@ import Link from "next/link";
 import Head from "next/head";
 
 import Navigation from "./Navigation";
-import config from "../../config/siteConfig";
+import config from "../config/siteConfig";
 
 const coverImage = "/images/blog-cover.jpeg";
 const logoImage = "/images/logo.png";
 
-const Layout = ({ children, bodyClass }: any) => {
+export const Layout = ({ children, bodyClass }: any) => {
   const site = {
     lang: "vn",
     title: "Code3x",
@@ -28,6 +28,7 @@ const Layout = ({ children, bodyClass }: any) => {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/styles/client/app.css" />
       </Head>
       <Helmet>
         <html lang={site.lang} />
@@ -144,5 +145,3 @@ const Layout = ({ children, bodyClass }: any) => {
     </>
   );
 };
-
-export default Layout;

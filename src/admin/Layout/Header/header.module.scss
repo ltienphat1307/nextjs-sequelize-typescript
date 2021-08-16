@@ -1,6 +1,73 @@
+@import "../../styles/theme";
+
 .header {
   height: 64px;
   border: none;
   font-weight: 500;
   padding: 0.9rem 40px;
+  justify-content: flex-end;
+}
+
+.root {
+  display: flex;
+  justify-content: flex-end !important;
+  @media (max-width: breakpoint-max(sm)) {
+    margin-bottom: 50px;
+  }
+
+  ul > li > a {
+    padding: 0.5rem 12px;
+    @media (max-width: 580px) {
+      padding: 0.5rem 6px;
+    }
+  }
+}
+
+.navItem {
+  font-size: 1.5rem;
+  outline: 0;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    color: $white !important;
+  }
+
+  :global(.glyphicon),
+  :global(.fa) {
+    vertical-align: baseline;
+  }
+}
+
+.headerIcon {
+  fill: $icon-color;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 40px;
+  width: 40px;
+  background: $blue;
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 10px;
+  img {
+    height: 100%;
+  }
+}
+
+.accountCheck {
+  color: $icon-color;
+  font-weight: $font-weight-normal;
+  font-size: 1rem;
+}
+
+.divider {
+  display: block;
+  width: 1px;
+  margin: 10px 14px;
+  background: $icon-color;
 }

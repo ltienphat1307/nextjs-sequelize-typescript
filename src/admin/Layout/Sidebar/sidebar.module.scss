@@ -1,3 +1,5 @@
+@import "../../styles/theme";
+
 .sidebar {
   width: 200px;
   position: absolute;
@@ -12,4 +14,66 @@
   transition: height 1s;
   -webkit-transform: translateX(-200px);
   transform: translateX(-200px);
+}
+
+.logo {
+  margin: 20px 0 55px;
+  font-size: 18px;
+  width: 100%;
+  font-weight: $font-weight-normal;
+  text-align: center;
+  text-transform: uppercase;
+
+  a {
+    color: $icon-color;
+    padding: 0 5px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}
+
+.nav {
+  padding-bottom: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  li {
+    > a {
+      position: relative;
+      align-items: center;
+      padding: 13px 20px 13px 10px;
+      border-top: 1px solid transparent;
+      white-space: nowrap;
+      border-radius: 0.25rem;
+
+      > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+}
+
+.headerLink {
+  overflow-x: hidden;
+  font-size: 1rem;
+
+  a {
+    font-size: 14px;
+    font-weight: $font-weight-thin;
+    display: flex;
+    justify-content: left;
+    color: $icon-color;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
 }
