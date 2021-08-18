@@ -6,6 +6,6 @@ import { BaseModel } from "./BaseModel";
   tableName: "tag",
 })
 export class Tag extends BaseModel {
-  @Column({ type: DataType.STRING })
+  @Column({ type: DataType.STRING, allowNull: false })
   public name!: string;
 }

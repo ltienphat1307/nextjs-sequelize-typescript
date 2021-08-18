@@ -2,16 +2,16 @@ import React from "react";
 import { NextPageContext } from "next";
 
 import { CategoryHeader, PostCard } from "@src/client/components/Blogs";
-import { UserRepository } from "@server/repositories";
+// import { UserRepository } from "@server/repositories";
 import { User } from "@server/models";
 
 export async function getServerSideProps({ locale }: NextPageContext) {
   console.log("locale", locale);
 
-  const users = await UserRepository.findAllRaw();
+  // const users = await UserRepository.findAllRaw();
 
-  // Pass data to the page via props
-  return { props: { users } };
+  // // Pass data to the page via props
+  // return { props: { users } };
 }
 
 interface HomeProps {

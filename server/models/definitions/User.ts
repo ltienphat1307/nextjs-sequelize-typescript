@@ -13,11 +13,11 @@ import { BaseModel } from "./BaseModel";
   tableName: "user",
 })
 export class User extends BaseModel {
-  @Column({ type: DataType.STRING })
+  @Column({ type: DataType.STRING, allowNull: false })
   public name!: string;
 
   @IsEmail
-  @Column({ type: DataType.STRING })
+  @Column({ type: DataType.STRING, allowNull: false })
   public email!: string;
 
   @AllowNull

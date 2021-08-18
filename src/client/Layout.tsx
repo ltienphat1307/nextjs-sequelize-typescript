@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet";
 import Link from "next/link";
 import Head from "next/head";
 
-import Navigation from "./Navigation";
-import config from "../config/siteConfig";
+import Navigation from "./components/Navigation";
+import config from "./config/siteConfig";
 
 const coverImage = "/images/blog-cover.jpeg";
 const logoImage = "/images/logo.png";
@@ -28,6 +28,7 @@ export const Layout = ({ children, bodyClass }: any) => {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/styles/client/reset.css" />
         <link rel="stylesheet" href="/styles/client/app.css" />
       </Head>
       <Helmet>

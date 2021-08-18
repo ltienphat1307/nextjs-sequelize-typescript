@@ -1,12 +1,14 @@
-// // import { FindOptions } from "sequelize-typescript";
 // import { FindOptions } from "sequelize";
-// import { BaseModel } from "../models/definitions/BaseModel";
+// import { Model } from "sequelize-typescript";
+// // import { BaseModel } from "../models/definitions/BaseModel";
 
-// export class BaseRepository extends <T> {
-//   // constructor(protected model: typeof BaseModel) {
+// export class BaseRepository extends Model {
+//   // instanceMethod(input: T) : T
+//   // {
+//   //     return input;
 //   // }
 
-//   public async findAllRaw(options?: FindOptions) {
+//   public static async findAllRaw(options?: FindOptions) {
 //     options = options || {};
 //     options.raw = true;
 

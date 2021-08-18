@@ -17,7 +17,7 @@ export const LayoutAdmin: React.FC = ({ children }) => {
           <Header />
           <Sidebar />
           <div className={styles.layoutContent}>{children}</div>
-          <footer className={styles.laytFooter}>React admin template</footer>
+          {/* <footer className={styles.laytFooter}>React admin template</footer> */}
         </div>
       </div>
     </>

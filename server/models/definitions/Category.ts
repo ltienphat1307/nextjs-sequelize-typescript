@@ -4,13 +4,18 @@ import { BaseModel } from "./BaseModel";
 import { Post } from "./Post";
 
 @Table({
-  timestamps: false,
+  timestamps: true,
   tableName: "category",
 })
 export class Category extends BaseModel {
-  @Column({ type: DataType.STRING })
+  @Column({ type: DataType.STRING, allowNull: false })
   public name!: string;
 
+  @Column({ type: DataType.STRING, allowNull: false })
+  public slug!: string;
+
+  /* Associantions */
   @HasMany(() => Post)
   public posts!: Post[];
+  /* End Associantions */
 }

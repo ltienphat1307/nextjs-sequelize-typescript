@@ -14,51 +14,53 @@ import { PostTagAssociation } from "./PostTagAssociation";
 import { Category } from "./Category";
 
 @Table({
-  timestamps: false,
+  timestamps: true,
   tableName: "post",
 })
 export class Post extends BaseModel {
-  @Column({ type: DataType.STRING })
+  @Column({ type: DataType.STRING, allowNull: false })
   public title!: string;
 
-  @Column({ type: DataType.STRING })
+  @Column({ type: DataType.STRING, allowNull: false })
   public slug!: string;
 
   @AllowNull
   @Column({ type: DataType.STRING })
   public featureImage?: string;
 
-  @Column({ type: DataType.STRING })
+  @Column({ type: DataType.STRING, allowNull: false })
   public excerpt!: string;
 
-  @Column({ type: DataType.TINYINT, defaultValue: false })
+  @Column({ type: DataType.TINYINT, defaultValue: false, allowNull: false })
   public featured!: boolean;
 
   @AllowNull
   @Column({ type: DataType.DATE })
   public publishedDate?: Date;
 
-  @Column({ type: DataType.TEXT })
+  @Column({ type: DataType.TEXT, allowNull: false })
   public content!: string;
 
-  /** Author */
+  /* Associantions */
+  // Author
   @BelongsTo(() => User)
   public author!: User;
 
   @ForeignKey(() => User)
-  @Column(DataType.INTEGER)
+  @Column({ type: DataType.INTEGER, allowNull: false })
   public authorId!: number;
-  /** End Author */
+  // End Author
 
-  /** Category */
+  // Category
   @BelongsTo(() => Category)
   public category!: Category;
 
   @ForeignKey(() => Category)
-  @Column(DataType.INTEGER)
+  @Column({ type: DataType.INTEGER, allowNull: false })
   public categoryId!: number;
-  /** End Category */
+  // End Category
 
   @HasMany(() => PostTagAssociation)
   public postTagAssociations!: PostTagAssociation[];
+  /* End Associantions */
 }
