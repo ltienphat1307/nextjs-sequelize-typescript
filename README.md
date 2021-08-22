@@ -1,22 +1,15 @@
-# Custom server with TypeScript + Nodemon example
+This example will show you how to create a Nextjs blog with Sequelize in typescript with some features as below:
 
-The example shows how you can use [TypeScript](https://typescriptlang.com) on both the server and the client while using [Nodemon](https://nodemon.io/) to live reload the server code without affecting the Next.js universal code.
+- Admin Dasboard to mange categoryies, blogs,…
+- Landing page to display your blogs,…
 
-Server entry point is `server/index.ts` in development and `dist/index.js` in production.
+Server entry point is `/index.ts` in development and `/index.js` in production.
 The second directory should be added to `.gitignore`.
 
-## Preview
-
-Preview the example live on [StackBlitz](http://stackblitz.com/):
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/custom-server-typescript)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## How to run
 
 ```bash
-npx create-next-app --example custom-server-typescript custom-server-typescript-app
-# or
-yarn create next-app --example custom-server-typescript custom-server-typescript-app
+npm i
+
+npm run dev
 ```
