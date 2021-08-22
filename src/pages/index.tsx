@@ -1,6 +1,6 @@
 import React from "react";
 
-import { PostCard } from "@src/client/components/Blogs";
+import { PostCard } from "@src/components/client/components/Blogs";
 import { PostRepository } from "@server/repositories";
 import { Post, User } from "@server/models";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { NextPageContext } from "next";
 
-import { PostContent } from "@src/client/components/Blogs/PostContent";
+import { PostContent } from "@src/components/client/components/Blogs/PostContent";
 import { PostRepository } from "@server/repositories";
 import { Post } from "@server/models";
 

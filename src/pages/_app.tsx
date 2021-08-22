@@ -1,8 +1,8 @@
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 
-import { Layout } from "@src/client/Layout";
-import { LayoutAdmin } from "@src/admin/Layout";
+import { Layout } from "@src/components/client/Layout";
+import { LayoutAdmin } from "@src/components/admin/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const route = useRouter();
