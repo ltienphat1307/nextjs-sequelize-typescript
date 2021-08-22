@@ -9,17 +9,8 @@
 }
 
 .root {
-  display: flex;
-  justify-content: flex-end !important;
-  @media (max-width: breakpoint-max(sm)) {
-    margin-bottom: 50px;
-  }
-
-  ul > li > a {
-    padding: 0.5rem 12px;
-    @media (max-width: 580px) {
-      padding: 0.5rem 6px;
-    }
+  .nav {
+    height: 100%;
   }
 }
 
@@ -27,15 +18,11 @@
   font-size: 1.5rem;
   outline: 0;
   text-align: center;
+  padding: 0rem 1rem;
 
   &:hover,
   &:focus {
     color: $white !important;
-  }
-
-  :global(.glyphicon),
-  :global(.fa) {
-    vertical-align: baseline;
   }
 }
 

@@ -5,9 +5,7 @@ import styles from "./sidebar.module.scss";
 export const Sidebar: React.FC = () => {
   return (
     <div className={styles.sidebar}>
-      <header className={styles.logo}>
-        <a href="https://demo.flatlogic.com/light-blue-react/">Admin</a>
-      </header>
+      <header className={styles.logo}>Admin</header>
       <ul className={styles.nav}>
         <li className={styles.headerLink}>
           <a href="/admin">Dashboard</a>

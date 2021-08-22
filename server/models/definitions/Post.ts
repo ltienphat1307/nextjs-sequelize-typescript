@@ -61,6 +61,6 @@ export class Post extends BaseModel {
   // End Category
 
   @HasMany(() => PostTagAssociation)
-  public postTagAssociations!: PostTagAssociation[];
+  public postTagAssociations?: PostTagAssociation[];
   /* End Associantions */
 }

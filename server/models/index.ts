@@ -17,5 +17,14 @@ const sequelize = new Sequelize({
 
 sequelize.addModels([User, Category, Post, Tag, PostTagAssociation]);
 
-export default sequelize;
 export { User, Post, Tag, PostTagAssociation, Category };
+
+export const initDB = async () => {
+  await sequelize.authenticate();
+  await sequelize.sync({ alter: true });
+
+  await User.findOrCreate({
+    where: { email: "admin@example.com" },
+    defaults: { name: "admin", email: "admin@example.com" },
+  });
+};

@@ -2,15 +2,14 @@ import { createServer } from "http";
 import { parse } from "url";
 import next from "next";
 
-import sequelize from "./server/models";
+import { initDB } from "./server/models";
 
 const port = parseInt(process.env.PORT || "3000", 10);
 const dev = process.env.NODE_ENV !== "production";
 
 async function bootstap() {
   try {
-    await sequelize.authenticate();
-    await sequelize.sync({ alter: true });
+    await initDB();
 
     console.log("Connection has been established successfully.");
   } catch (err) {

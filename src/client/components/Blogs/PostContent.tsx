@@ -1,7 +1,7 @@
 import React from "react";
-import { Post as PostEntiy } from "@server/models";
+import { Post } from "@server/models";
 
-export const Post = (post: PostEntiy) => {
+export const PostContent = ({ post }: { post: Post }) => {
   return (
     <div className="container">
       <article className="content">

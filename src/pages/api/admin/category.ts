@@ -1,6 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-// import nextConnect from "next-connect";
-
 import { CategoryRepository } from "@server/repositories";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -13,11 +11,3 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   return res.status(200).json(category.toJSON());
 };
-
-// export const config = {
-//   api: {
-//     bodyParser: {
-//       sizeLimit: "1mb",
-//     },
-//   },
-// };
